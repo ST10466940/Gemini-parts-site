@@ -38,9 +38,6 @@ Then browse to http://localhost:5173
 
 ## Create a new GitHub repo and push
 
-> Replace `YOUR_GITHUB_USERNAME` and repo name as you prefer.
-
-```bash
 cd "/mnt/data/gemini-parts-site"
 git init
 git add .
@@ -51,9 +48,46 @@ git commit -m "chore: bootstrap Gemini Parts HTML skeleton"
 gh repo create YOUR_GITHUB_USERNAME/gemini-parts-site --private --source=. --remote=origin --push
 # If you don't use GH CLI, create the repo on the GitHub website,
 # then set the remote manually:
-# git remote add origin https://github.com/YOUR_GITHUB_USERNAME/gemini-parts-site.git
+# git remote add origin https://github.com/ST10466940/gemini-parts-site.git
 # git push -u origin main
-```
+
+Updates
+
+CSS styling refactor
+
+Converted from dark theme to white background with dark-green brand palette.
+
+Introduced design tokens for colors, typography, spacing, and shadows.
+
+Added CSS reset and base styles for cross-browser consistency.
+
+Applied responsive typography scale using rem/clamp().
+
+Added consistent focus states and hover interactions for accessibility.
+
+Layout improvements
+
+Implemented Flexbox/Grid layouts for header, navigation, content, and footer.
+
+Content now adapts across desktop (3-col), tablet (2-col), and mobile (1-col) breakpoints.
+
+Introduced container utility for consistent page width.
+
+Responsive design
+
+Defined breakpoints at 1200px, 900px, and 600px.
+
+Updated components to scale fluidly with %, rem, and em.
+
+Added support for responsive images (srcset, sizes, <picture>).
+
+Accessibility & performance
+
+Enforced WCAG 2.2 AA contrast ratios for text and UI.
+
+Added reduced-motion support for users with motion sensitivity.
+
+Simplified CSS structure for faster rendering and reduced reflows.
 
 ## Next steps
 
