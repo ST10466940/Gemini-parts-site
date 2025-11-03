@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/temp/
+
+Sitemap: https://www.geminiparts.co.za/sitemap.xml

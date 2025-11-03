@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parts Enquiry | Gemini Parts</title>
+    <meta
+      name="description"
+      content="Submit a detailed parts enquiry to Gemini Parts. Tell us your vehicle information and we will confirm pricing, availability, and fitment options within 24 hours."
+    />
+    <link rel="canonical" href="https://www.geminiparts.co.za/enquiry" />
+    <meta property="og:title" content="Request a Parts Quote | Gemini Parts" />
+    <meta property="og:description" content="Share your VIN or registration to receive OEM and aftermarket part pricing and availability from Gemini Parts." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.geminiparts.co.za/enquiry" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data: https://www.geminiparts.co.za; connect-src 'self' https://api.geminiparts.co.za; form-action 'self' https://api.geminiparts.co.za; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" role="banner">
+      <div class="container header-main">
+        <a class="brand" href="index.html" aria-label="Gemini Parts Home">
+          <img src="assets/icons/logo.svg" alt="Gemini Parts logo" width="40" height="40" loading="lazy" />
+          <span>Gemini Parts</span>
+        </a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span aria-hidden="true">☰</span>
+        </button>
+        <nav class="utility-nav" aria-label="Quick links">
+          <a href="index.html#services">Services</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary">
+        <ul class="nav-list container">
+          <li><a href="index.html#inventory">Shop Parts</a></li>
+          <li><a href="#parts">Part categories</a></li>
+          <li><a href="#trade">Trade programmes</a></li>
+          <li><a href="contact.html#message">Technical support</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="site-main" role="main">
+      <section class="page-hero" aria-labelledby="enquiry-title">
+        <div class="container narrow">
+          <p class="eyebrow">Parts enquiry</p>
+          <h1 id="enquiry-title">Tell us what your vehicle needs</h1>
+          <p>
+            Complete the form below to receive pricing, availability, and fitment options tailored to your vehicle. Our parts specialists will confirm compatibility before we ship.
+          </p>
+        </div>
+      </section>
+
+      <section class="content-section" aria-labelledby="form-title">
+        <div class="container form-layout">
+          <div class="form-panel">
+            <h2 id="form-title">Enquiry form</h2>
+            <form
+              class="lead-form"
+              action="https://api.geminiparts.co.za/enquiries"
+              method="post"
+              data-enhanced
+              data-form-type="enquiry"
+              data-mock="true"
+            >
+              <fieldset class="form-grid">
+                <legend class="sr-only">Your contact details</legend>
+                <div class="form-field" data-field>
+                  <label for="full-name">Full name</label>
+                  <input id="full-name" name="name" type="text" autocomplete="name" required minlength="3" />
+                  <p class="field-error" data-error></p>
+                </div>
+                <div class="form-field" data-field>
+                  <label for="company">Company or workshop (optional)</label>
+                  <input id="company" name="company" type="text" autocomplete="organization" maxlength="80" />
+                  <p class="field-error" data-error></p>
+                </div>
+                <div class="form-field" data-field>
+                  <label for="email">Email address</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required />
+                  <p class="field-error" data-error></p>
+                </div>
+                <div class="form-field" data-field>
+                  <label for="phone">Mobile number</label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    required
+                    pattern="^[+0-9\s-]{7,20}$"
+                    title="Enter a valid phone number"
+                  />
+                  <p class="field-error" data-error></p>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-grid">
+                <legend class="sr-only">Vehicle details</legend>
+                <div class="form-field" data-field>
+                  <label for="vehicle-type">Vehicle make &amp; model</label>
+                  <input id="vehicle-type" name="vehicle" type="text" placeholder="e.g. Toyota Hilux 2.8 GD-6" required minlength="3" />
+                  <p class="field-error" data-error></p>
+                </div>
+                <div class="form-field" data-field>
+                  <label for="vin">VIN or registration</label>
+                  <input id="vin" name="vin" type="text" maxlength="20" required pattern="[A-HJ-NPR-Z0-9]{8,20}" />
+                  <p class="field-error" data-error>Use capital letters and numbers only.</p>
+                </div>
+                <div class="form-field" data-field>
+                  <label for="parts-focus">What are you looking for?</label>
+                  <select id="parts-focus" name="interest" required>
+                    <option value="" disabled selected>Choose a category</option>
+                    <option value="brakes">Brake systems &amp; hydraulics</option>
+                    <option value="filters">Filters &amp; service kits</option>
+                    <option value="suspension">Suspension &amp; steering</option>
+                    <option value="cooling">Cooling &amp; climate control</option>
+                    <option value="electrical">Engine electrics &amp; sensors</option>
+                    <option value="accessories">Accessories &amp; detailing</option>
+                    <option value="fleet">Fleet maintenance contract</option>
+                  </select>
+                  <p class="field-error" data-error></p>
+                </div>
+                <div class="form-field" data-field>
+                  <label for="quantity">Quantity required</label>
+                  <input id="quantity" name="quantity" type="number" min="1" max="200" value="1" required />
+                  <p class="field-error" data-error></p>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-grid">
+                <legend class="sr-only">Fulfilment preferences</legend>
+                <div class="form-field" data-field>
+                  <label for="preferred-date">Preferred delivery or fitment date</label>
+                  <input id="preferred-date" name="preferredDate" type="date" required />
+                  <p class="field-error" data-error></p>
+                </div>
+                <div class="form-field" data-field>
+                  <label for="contact-method">How should we reach you?</label>
+                  <select id="contact-method" name="contactMethod" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone call</option>
+                    <option value="whatsapp">WhatsApp message</option>
+                  </select>
+                  <p class="field-error" data-error></p>
+                </div>
+                <div class="form-field span-two" data-field>
+                  <label for="notes">Anything else we should know?</label>
+                  <textarea id="notes" name="notes" rows="4" maxlength="500" placeholder="Share service history, part numbers, or urgency"></textarea>
+                  <p class="field-error" data-error></p>
+                </div>
+              </fieldset>
+
+              <div class="form-actions">
+                <button type="submit" class="btn cta">Calculate availability</button>
+                <button type="reset" class="btn secondary">Clear form</button>
+              </div>
+              <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+            </form>
+            <div class="quote-output" data-form-result hidden aria-live="polite"></div>
+          </div>
+
+          <aside class="form-aside" aria-labelledby="service-promise">
+            <h2 id="service-promise">What happens next?</h2>
+            <ol>
+              <li>Our system calculates estimated pricing using current supplier feeds.</li>
+              <li>A specialist validates fitment and checks nearby stock levels.</li>
+              <li>We share a formal quote including delivery or workshop options.</li>
+            </ol>
+            <p class="text-muted">We respond within one business day. For urgent requests call <a href="tel:+27115550192">+27 11 555 0192</a>.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="content-section alt" id="parts" aria-labelledby="parts-title">
+        <div class="container">
+          <h2 id="parts-title">Popular part categories</h2>
+          <div class="card-grid">
+            <article class="card">
+              <h3>Brake systems</h3>
+              <p>Complete kits including pads, discs, calipers, brake fluid, and ABS sensors for passenger and commercial fleets.</p>
+            </article>
+            <article class="card">
+              <h3>Service kits</h3>
+              <p>OEM-approved oil, fuel, air, and cabin filters bundled with spark plugs and wiper blades for major services.</p>
+            </article>
+            <article class="card">
+              <h3>Suspension &amp; steering</h3>
+              <p>Control arms, shocks, stabiliser links, and bush kits tested for South African road conditions.</p>
+            </article>
+            <article class="card">
+              <h3>Electrical &amp; sensors</h3>
+              <p>Alternators, starters, batteries, coil packs, and diagnostic sensors backed by manufacturer warranties.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="trade" aria-labelledby="trade-title">
+        <div class="container trade">
+          <div>
+            <h2 id="trade-title">Trade and fleet programmes</h2>
+            <p>Workshops, panel beaters, and fleet operators qualify for preferential pricing, dedicated account managers, and consolidated statements.</p>
+            <ul class="inventory__list">
+              <li>Monthly spend-based rebates</li>
+              <li>After-hours emergency sourcing</li>
+              <li>Technical training sessions for your team</li>
+              <li>API integration for stock visibility</li>
+            </ul>
+            <a class="btn" href="#form-title">Apply with your next enquiry</a>
+          </div>
+          <aside>
+            <h3>Need sponsorship for a community project?</h3>
+            <p>We review volunteer and sponsorship requests quarterly. Share your proposal in the enquiry form and our CSR team will contact you.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-bottom">
+        <small>&copy; <span data-current-year></span> Gemini Parts. All rights reserved.</small>
+        <a class="text-link" href="index.html">Return to homepage</a>
+      </div>
+      <script src="js/main.js" defer></script>
+    </footer>
+  </body>
+</html>
