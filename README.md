@@ -89,9 +89,4 @@ Added reduced-motion support for users with motion sensitivity.
 
 Simplified CSS structure for faster rendering and reduced reflows.
 
-## Next steps
 
-- Hook up product catalog and inventory integration.
-- Replace placeholders (logos, images) with brand assets.
-- Add CI/CD (e.g., GitHub Actions) to deploy to a static host (GitHub Pages, Cloudflare Pages, Netlify).
-- Add a component library and framework as needed.
