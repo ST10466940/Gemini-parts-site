@@ -1,5 +1,4 @@
 # Gemini Parts — Static Web Skeleton
-# Gemini Parts — Marketing Site
 
 This repository contains the initial HTML structure and organized folder layout proposed for the Gemini Parts e‑commerce project.
 This repository houses the Gemini Parts marketing experience, built as a static site with reusable assets for future expansion. The project now ships with a home page, dedicated enquiry and contact flows, and supporting SEO resources so the site can be deployed immediately.
